@@ -12,86 +12,129 @@
 
 <body>
     <main>
-        <div class="panel" id="cliente">
-            <h1>Cliente</h1>
-            <div>
-                <div>
-                    <label for="tipo_documento">
-                        Tipo de Documento
-                    </label>
-                    <select id="tipo_documento" class="form-control">
-                        <option>NIT</option>
-                        <option>Cédula</option>
-                        <option>Pasaporte</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="identificacion">
-                        Identificación
-                    </label>
-                    <input type="text" id="identificacion" class="form-control" />
-                </div>
-                <button onclick="buscarCliente()" class="btn btn-success mt-3">Buscar</button>
-            </div>
-            </br>
-            <div>
-                <table id="tabla-cliente" class="table">
-                    <thead>
-                        <tr>
-                            <th>Identificación</th>
-                            <th>Nombre</th>
-                            <th>Correo</th>
-                            <th>Teléfono</th>
-                            <th>Ventas del mes</th>
-                            <th>Ciudad</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-                <div class="d-none">
-                    <table id="tabla-factura" class="table">
-                        <thead>
-                            <tr>
-                                <th>Valor</th>
-                                <th>Fecha Registro</th>
-                                <th>Vendedor</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                    <table id="tabla-compra" class="table">
-                        <thead>
-                            <tr>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
-                                <th>Valor</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
+        <div class="" id="cliente">
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col-6 align-self-center">
+                    <div class="card text-start border-2 ">
+                        <div class="card-body">
+                            <h4 class="card-title">Cliente</h4>
+                            <p class="card-text">
+                                <div class="mb-3">
+                                    <label for="tipo_documento" class="form-label">
+                                        Tipo de Documento
+                                    </label>
+                                    <select id="tipo_documento" class="form-control">
+                                        <option value="1">NIT</option>
+                                        <option value="2">Cédula</option>
+                                        <option value="3">Pasaporte</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="identificacion" class="form-label">
+                                        Identificación
+                                    </label>
+                                    <input type="text" id="identificacion" class="form-control" />
+                                </div>
+                                <button onclick="buscarCliente()" class="btn btn-success mt-3">Buscar</button>
+                                <div class="row justify-content-center align-items-center g-2 mt-3 d-none">
+                                    <div class="col">
+                                        <table id="tabla-cliente" class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Identificación</th>
+                                                    <th>Nombre</th>
+                                                    <th>Correo</th>
+                                                    <th>Teléfono</th>
+                                                    <th>Ventas del mes</th>
+                                                    <th>Ciudad</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
 
+                                    </div>
+                                </div>
+                                <div id="resultados">
+
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-none">
+                <div id="tabla-factura" class="row justify-content-center align-items-center g-2 mt-3">
+                    <div class="col">
+                        <h4>Factura</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Valor</th>
+                                    <th>Fecha Registro</th>
+                                    <th>Vendedor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="tabla-compra" class="row justify-content-center align-items-center g-2 mt-3">
+                    <div class="col">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-        <h1>Clientes para Fidelizar</h1>
 
-        <button onclick="descargarCSV()" class="btn btn-success">Descargar CSV</button>
-        <table id="tabla-clientes" class="table">
-            <thead>
-                <tr>
-                    <th>Identificación</th>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Teléfono</th>
-                    <th>Ventas del mes</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div class="row justify-content-center align-items-center g-2 mt-3">
+            <div class="col-6 align-self-center">
+                <div class="card text-start border-2 ">
+                    <div class="card-body">
+                        <h4 class="card-title">Clientes para Fidelizar</h4>
+                        <p class="card-text">
+                            <table id="tabla-clientes" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Identificación</th>
+                                        <th>Nombre</th>
+                                        <th>Correo</th>
+                                        <th>Teléfono</th>
+                                        <th>Ventas del mes</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <button onclick="descargarCSV()" class="btn btn-success">Descargar CSV</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
-
-
-
 
     <script>
         async function cargarClientes() {
@@ -126,15 +169,16 @@
         async function buscarCliente() {
             try {
                 let identificacion = $("#identificacion").val();
+                let tipo = $("#tipo_documento").val();
 
-
-                const response = await fetch('http://127.0.0.1:8000/cliente/get_cliente/identificacion=' + identificacion);
+                const response = await fetch('http://127.0.0.1:8000/cliente/get_cliente/identificacion=' + identificacion + "&tipo=" + tipo);
                 const data = await response.json();
                 const $tbody = $('#tabla-cliente tbody');
+                const $resultados = $("#resultados");
+
                 $tbody.html("");
-
-                console.log(data)
-
+                $resultados.html("");
+                $("#tabla-cliente").parent(".row").removeClass("d-none");
 
                 const $fila = $("<tr></tr>");
                 $fila.html(`
@@ -143,16 +187,51 @@
                             <td>${data.correo}</td>
                             <td>${data.telefono}</td>
                             <td>${data.ventas_mes.toLocaleString()}</td>
-                            <td>${data.ciudad}</td>
+                            <td>${data.ciudad}</td>python manage.py runserver
                         `);
                 $tbody.append($fila);
+
+                $.each(data.facturas, (i, factura) => {
+                    console.log(factura);
+                    let $tblFactura = $("#tabla-factura").clone();
+
+                    $tblFactura.find("td").eq(0).text(factura.id_factura);
+                    $tblFactura.find("td").eq(1).text(factura.valor_total.toLocaleString());
+                    const fecha_registro = new Date(factura.fecha_registro).toLocaleDateString("es-CO", {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: "2-digit",
+                        minute: "2-digit",
+                    });
+                    $tblFactura.find("td").eq(2).text(fecha_registro);
+                    $tblFactura.find("td").eq(3).text(factura.vendedor);
+
+                    let $tblCompras = $("#tabla-compra").clone();
+
+                    $.each(factura.compras, (j, compra) => {
+                        if (j > 0) {
+                            $tblCompras.find("tbody").append($tblCompras.find("tbody tr:last").clone());
+                        }
+
+                        let $tr = $tblCompras.find("tbody tr:last");
+                        $tr.find("td").eq(0).text(compra.nombre_producto);
+                        $tr.find("td").eq(1).text(compra.cantidad);
+                        $tr.find("td").eq(2).text(compra.valor.toLocaleString());
+
+
+                    });
+
+                    $("#resultados").append($tblFactura);
+                    $("#resultados").append($tblCompras);
+                    $("#resultados").append("</hr>");
+                });
 
             } catch (error) {
                 console.error('Error al cargar los clientes:', error);
             }
         }
-
-
 
         window.onload = cargarClientes;
     </script>
