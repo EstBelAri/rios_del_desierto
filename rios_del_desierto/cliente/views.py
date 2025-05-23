@@ -10,9 +10,9 @@ import pandas as pd
 
 class ClienteView(APIView):
 
-    def get(self, request, identificacion):
+    def get(self, request, identificacion, tipo):
         try:
-            cliente = Cliente.objects.get(identificacion=identificacion)
+            cliente = Cliente.objects.get(identificacion=identificacion, id_tipo_documento=tipo)
         except Cliente.DoesNotExist:
            raise Http404
         serializer = ClienteSerializer(cliente)
@@ -56,11 +56,11 @@ class ClientesFidelizarCSV(APIView):
         ]
             
             df = pd.DataFrame(resultado)
-            csv_data = df.to_csv(index=False, encoding='utf-8')
+            csv_data = df.to_csv(index=False,encoding='latin1')
 
         except Cliente.DoesNotExist:
            raise Http404
         
-        response = HttpResponse(csv_data, content_type='text/csv')
+        response = HttpResponse(csv_data, content_type='text/csv; charset=latin-1')
         response['Content-Disposition'] = 'attachment; filename="clientes.csv"'
         return response
